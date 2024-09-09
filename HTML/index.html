@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Cadastron</title>
+</head>
+<body>
+    <header class="centro">
+        <Div>
+            <img src="/imagens/logoPreta.png" alt="" height="80"
+            width="80px">
+        </Div>
+        <div id="conteudoHeader">
+            <h1>Cadastron</h1>
+            <p>Site simples para demonstrar o CRUD com JS</p>
+        </div>
+    </header>
+    <main>
+        <section id="formArea">
+            <form action="" class="centro" id="formCadUsuario">
+                <div class="campoArea">
+                    <label for="edtNome" class="legendaCampo">Nome:</label>
+                    <input type="text" id="edtNome" class="edt" maxlength="45" pattern="[a-zA-Z\s]+$" required="required">
+                </div>
+                
+                <div class="campoArea">
+                    <label for="edtEmail" class="legendaCampo">Email:</label>
+                    <input type="email" id="edtEmail" class="edt" maxlength="60" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                </div>
+
+                <div class="campoArea">
+                    <label for="edtSenha" class="legendaCampo">Senha:</label>
+                    <input type="password" id="edtSenha" class="edt" maxlength="8" placeholder="No máximo 8 carac." required>
+                </div>
+                
+                <div class="campoArea">
+                    <label for="edtBirth" class="legendaCampo">Data de Nascimento:</label>
+                    <input type="date" id="edtBirth" class="edt" max="9999-12-31" required>
+                </div>
+
+                <div class="campoArea">
+                    <input type="button" onclick="gravar()" class="edt" value="Gravar">
+                </div>
+            </form>
+        </section>
+        <section id="filtrosLista">
+            <div id="tituloListaArea">
+                <h2>Lista de usuários cadastrados</h2>
+            </div>
+            <div id="filtrosArea">
+                <div id="edtPesquisaArea">
+                    <input type="search" class="edt" id="edtPesquisar" placeholder="Procurar usuário" onchange="pesquisar()">
+                </div>
+                <div id="botaoFiltroArea">
+                    <input type="button" class="botao" value="Esvaziar lista" onclick="esvaziarLista()">
+                    <input type="button" class="botao" value="Ordenar por Nome">    
+                    <input type="button" class="botao" value="Fazer Download">
+                </div>
+            </div>
+        </section>
+        
+        <section id="listaCadUsuario">
+            <p id="alertaListaVazia">Nenhum usuário cadastrado.</p>
+            <!-- Os itens serão gerados dinamicamente aqui -->
+            <!-- <div class="ItemUser">
+                <div class="DadosUser">
+                    <p class="NomeUser">${usuario.nome}</p>
+                    <p class="Emailuser">${usuario.email}</p> 
+                    <p class="SenhaUser">${usuario.senha}</p>
+                    <p class="BirthUser">${usuario.dataAniversario}</p>    
+                </div>
+                <div class="AreaModificacoes">
+                    <input type="button" class="btnAlterar" onclick="carregarDados(${index})" value="Alterar">
+                    <input type="button" class="btnDeletar" onclick="deletar(${index})" value="Deletar">
+                </div>
+            </div> -->
+        </section>
+    </main>
+    <footer class="centro">
+        
+        
+        <div id="conteudoFooter" class="centro">
+            <img src="/imagens/logoFooter.png" alt="" height="80"
+            width="80px">
+            <p>Criado por Leonardo José</p>
+            <a href="http://">Redes Sociais</a>
+        </div>
+    </footer>
+    <script src="/JS/index.js"></script>
+</body>
+</html>
