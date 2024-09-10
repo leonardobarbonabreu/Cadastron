@@ -69,6 +69,13 @@ function atualizarListaUsuarios() {
             </div>
         `;
     });
+
+    if (Usuarios == 0) {
+        document.getElementById('alertaListaVazia');
+        listaCadUsuario.innerHTML = `
+        <p id="alertaListaVazia">Nenhum usuário cadastrado.</p>
+        `;
+    }
 }
 
 function carregarDados(index) {
@@ -201,12 +208,31 @@ function formatarData(data) {
 
 
 function esvaziarLista(){
-    for(var i =0; i < Usuarios; i++){
-        Usuarios.splice(i, 1)
-    };
+    // for(var i =0; i <= Usuarios.length; i++){
+    //     Usuarios.splice(i, 1)
+    // };
+    Usuarios = []; // Redefine o array para um array vazio
     atualizarListaUsuarios();  // Atualiza a interface
 }
 
+function ordenarPorNome() {
+    // Ordena o array Usuarios por nome (em ordem alfabética)
+    Usuarios.sort((a, b) => {
+        // Converte os nomes para letras minúsculas para fazer a comparação case-insensitive
+        let nomeA = a.nome.toLowerCase();
+        let nomeB = b.nome.toLowerCase();
 
+        if (nomeA < nomeB) {
+            return -1;
+        }
+        if (nomeA > nomeB) {
+            return 1;
+        }
+        return 0;
+    });
+
+    // Atualiza a lista de usuários na interface após a ordenação
+    atualizarListaUsuarios();
+}
 
 
